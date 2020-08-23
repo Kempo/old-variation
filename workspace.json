@@ -16,7 +16,9 @@
             "polyfills": "apps/main-site/src/polyfills.ts",
             "tsConfig": "apps/main-site/tsconfig.app.json",
             "assets": [
-              "apps/main-site/src/favicon.ico",
+              "apps/main-site/src/16x16.png",
+              "apps/main-site/src/32x32.png",
+              "apps/main-site/src/64x64.png",
               "apps/main-site/src/assets"
             ],
             "styles": [],
