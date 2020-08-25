@@ -15,10 +15,19 @@ const Layout = styled.div`
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  background-image: url(${triangle});
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+
+  // TO FIX.
+  @media screen and (max-width: 600px) {
+    background-image: none;
+    padding-bottom: 50px;
+  }
+
+  @media screen and (min-width: 601px) {
+    background-image: url(${triangle});
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+  }
 `;
 
 const Navigation = styled.div`

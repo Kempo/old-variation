@@ -25,14 +25,7 @@ const Header = styled.h1`
   font-weight: 500;
 `;
 
-const EmailButton = styled(ActionButton)`
-  &:hover {
-    background-color: #3C72FF;
-    color: white;
-  }
-`;
-
-const DescriptionText = "A specialty software development studio that crafts beautiful applications to amplify your digital presence."
+const DescriptionText = "A specialty software development studio that crafts beautiful and intuitive applications to amplify your digital presence."
 const AudienceText = "We partner with medical professionals to seamlessly connect the online world directly to their business."
 
 const Home: React.FC = () => {
@@ -41,7 +34,7 @@ const Home: React.FC = () => {
       <Header>Variation Studio</Header>
       <Description>{DescriptionText}</Description>
       <Audience>{AudienceText}</Audience>
-      <a href={`mailto:${EMAIL}`} target="_blank" rel="noopener noreferrer"><EmailButton>Contact</EmailButton></a>
+      <a href={`mailto:${EMAIL}`} target="_blank" rel="noopener noreferrer"><ActionButton>Contact</ActionButton></a>
     </div>
   )
 }

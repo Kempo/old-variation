@@ -5,14 +5,15 @@ const ActionButton = styled.button`
   border-width: 1px;
   border-style: solid;
   border-radius: 5px;
-  color: #3C72FF;
-  background-color: white;
+  color: white;
+  background-color: #3C72FF;
   padding: 10px 20px;
   font-size: 1em;
   transition: color 200ms, background-color 200ms;
 
   &:hover {
     cursor: pointer;
+    background-color: #3C4FFF;
   }
 `;
 
