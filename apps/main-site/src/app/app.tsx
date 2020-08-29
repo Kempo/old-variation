@@ -1,18 +1,22 @@
 import React from 'react';
-import { Home, Company } from './pages';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Home, Plans } from './pages';
+import { Switch, Route, Link, useLocation } from 'react-router-dom';
 import triangle from './pages/home/Triangle.svg';
 
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+type ContainerProps = {
+  showBackground: boolean
+}
 
 const Layout = styled.div`
-  max-width: 1000px;
+  max-width: 1200px;
   width: 100%;
   margin: 0px 32px;
   height: max-content;
 `;
 
-const Container = styled.div`
+const Container = styled.div<ContainerProps>`
   display: flex;
   justify-content: center;
 
@@ -22,18 +26,23 @@ const Container = styled.div`
     padding-bottom: 50px;
   }
 
-  @media screen and (min-width: 601px) {
-    background-image: url(${triangle});
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-  }
+  ${(props: ContainerProps) => props.showBackground && css`
+    background: white;
+    color: black;
+
+    @media screen and (min-width: 601px) {
+      background-image: url(${triangle});
+      background-size: cover;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+    }
+  `}
 `;
 
 const Navigation = styled.div`
   display: flex;
   flex-direction: row;
-  width: 150px;
+  width: 125px;
   justify-content: space-between;
   margin-top: 25px;
 `;
@@ -50,16 +59,18 @@ const WrapperLink = styled(Link)`
 
 export const App = () => {
 
+  const location = useLocation();
+
   return (
-    <Container>
+    <Container showBackground={location.pathname === '/'}>
       <Layout>
         <Navigation>
           <WrapperLink to="/">Home</WrapperLink>
-          {/*<WrapperLink to="/about">Company</WrapperLink>*/}
+          <WrapperLink to="/plans">Pricing</WrapperLink>
         </Navigation>
         <Switch>
-          <Route path="/about">
-            <Company />
+          <Route path="/plans">
+            <Plans />
           </Route>
           <Route path="/">
             <Home />
