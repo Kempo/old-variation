@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { ActionButton } from '../../components';
 
-const EMAIL = "aaron@variationstudio.com"
+const EMAIL = "contact@variationstudio.com"
 
 const BottomTextStyles = css`
   max-width: 500px;

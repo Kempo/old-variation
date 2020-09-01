@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { PricingContainer, PricingHeader, PricingFeatureList, PriceNumber, ActionButton } from '../../components';
 import { EssentialPlan, ProfessionalPlan } from './featureList';
 
+const EMAIL = 'contact@variationstudio.com'
+
 const Layout = styled.div`
   display: flex;
   flex-direction: row;
@@ -14,6 +16,7 @@ const Layout = styled.div`
 const CallToAction = styled.div`
   max-width: 400px;
   width: 100%;
+  margin-left: 20px;
 
   h1, h2 {
     font-weight: 400;
@@ -95,7 +98,7 @@ const Plans: React.FC = () => {
             We offer free setup and if you're unsatisfied with any of our plans, you can cancel anytime for free.
             <br />
             <br />
-            Feel free to contact us at <i>aaron@variationstudio.com</i>.
+            Send us a message at: <a href={`mailto:${EMAIL}`} target="_blank" rel="noopener noreferrer">contact@variationstudio.com</a>
             <br />
           </p>
         </CallToAction>
