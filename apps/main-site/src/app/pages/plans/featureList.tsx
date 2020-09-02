@@ -6,7 +6,7 @@
 export const EssentialPlan = [
   {
     H: "Search Engine Optimization",
-    P: "Rank amongst searche engines and lead clients directly to you."
+    P: "Rank amongst search engines and lead clients directly to you."
   },
   {
     H: "Expert Design",
@@ -23,7 +23,7 @@ export const EssentialPlan = [
     H: "Mobile Friendly"
   },
   {
-    H: "Five Pages"
+    H: "Ten Pages"
   },
   {
     H: "Email Forwarding"
@@ -48,11 +48,11 @@ export const ProfessionalPlan = [
   },
   {
     H: "Appointment Scheduling",
-    P: "Effortlessly schedule clients directly on your site with full HIPAA-compliance."
+    P: "Effortlessly schedule clients directly on your site."
   },
   {
     H: "Notifications",
-    P: "Send and receive reliable appointmnet notifications to yourself and your clients."
+    P: "Send and receive reliable appointment notifications to yourself and your clients."
   },
   {
     H: "Unlimited Pages"
