@@ -20,6 +20,7 @@
               "apps/main-site/src/32x32.png",
               "apps/main-site/src/64x64.png",
               "apps/main-site/src/192x192.png",
+              "apps/main-site/src/_redirects",
               "apps/main-site/src/assets"
             ],
             "styles": [],
