@@ -49,8 +49,17 @@ const Spacing = styled.div`
 
 const TYPEFORM = 'https://variation-studio.typeform.com/to/Ygy5hQxP';
 
+const emit = (category, label) => {
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  (window as any).gtag('event', 'click', {
+    'event_category': category,
+    'event_label': label
+  })
+}
+
 const InterestButton = () =>
-  (<a href={TYPEFORM} target="_blank" rel="noopener noreferrer">
+  (<a href={TYPEFORM} onClick={() => emit('FORM_CLICK', 'IM_INTERESTED_FORM')} target="_blank" rel="noopener noreferrer">
     <ActionButton outlined hoverEffect={false} style={{ width: '100%' }}>I'm interested</ActionButton>
   </a>);
 
@@ -81,10 +90,10 @@ const Plans: React.FC = () => {
             <PricingFeatureList>
                 {
                   EssentialPlan.map((feature) => (
-                    <>
+                    <div key={feature.H}>
                       <h2>{feature.H}</h2>
                       {feature.P && <p>{feature.P}</p>}
-                    </>
+                    </div>
                     )
                   )
                 }
@@ -100,10 +109,10 @@ const Plans: React.FC = () => {
             <PricingFeatureList>
               {
                 ProfessionalPlan.map((feature) => (
-                  <>
+                  <div key={feature.H}>
                     <h2>{feature.H}</h2>
                     {feature.P && <p>{feature.P}</p>}
-                  </>
+                  </div>
                   )
                 )
               }
