@@ -7,19 +7,16 @@ const EMAIL = 'contact@variationstudio.com'
 
 const Layout = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap-reverse;
+  flex-direction: column;
   margin-top: 3em;
   padding-bottom: 12px;
 `;
 
 const CallToAction = styled.div`
-  max-width: 400px;
-  width: 100%;
-  margin-left: 20px;
+  margin-bottom: 24px;
 
   h1, h2 {
-    font-weight: 400;
+    font-weight: 500;
   }
 
   h1 {
@@ -37,7 +34,17 @@ const Pricing = styled.div`
 
 const Disclaimer = styled.small`
   color: #CCC;
-  margin-bottom: 12px;
+  padding-bottom: 32px;
+`;
+
+const Spacing = styled.div`
+  width: 50px;
+  height: 100%;
+  display: inline;
+
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
 `;
 
 const TYPEFORM = 'https://variation-studio.typeform.com/to/Ygy5hQxP';
@@ -51,6 +58,20 @@ const Plans: React.FC = () => {
   return (
     <>
       <Layout>
+        <CallToAction>
+          <h1>Connect your practice online.</h1>
+          <h2>Setup for free, pay later.</h2>
+          <p>
+            <br />
+            We offer free setup and if you're unsatisfied with any of our plans, you can cancel anytime, no cost.
+            <br />
+            <br />
+            Have any questions? Send us a message at:
+            <br />
+            <a href={`mailto:${EMAIL}`} target="_blank" rel="noopener noreferrer">contact@variationstudio.com</a>
+            <br />
+          </p>
+        </CallToAction>
         <Pricing>
           <PricingContainer filled={false}>
             <PricingHeader>
@@ -70,6 +91,7 @@ const Plans: React.FC = () => {
             </PricingFeatureList>
             <InterestButton />
           </PricingContainer>
+          <Spacing />
           <PricingContainer filled={true}>
             <PricingHeader>
               <h1>PROFESSIONAL</h1>
@@ -89,19 +111,6 @@ const Plans: React.FC = () => {
             <InterestButton />
           </PricingContainer>
         </Pricing>
-        <CallToAction>
-          <h1>Make your business real.</h1>
-          <h2>Connect to the online world now.</h2>
-          <p>
-            <strong>Interested?</strong>
-            <br />
-            We offer free setup and if you're unsatisfied with any of our plans, you can cancel anytime for free.
-            <br />
-            <br />
-            Send us a message at: <a href={`mailto:${EMAIL}`} target="_blank" rel="noopener noreferrer">contact@variationstudio.com</a>
-            <br />
-          </p>
-        </CallToAction>
       </Layout>
       <Disclaimer>* Business email is set at five accounts. Inquire for more.</Disclaimer>
     </>

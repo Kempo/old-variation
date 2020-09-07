@@ -10,7 +10,7 @@ type ContainerProps = {
 }
 
 const Layout = styled.div`
-  max-width: 1200px;
+  max-width: 1050px;
   width: 100%;
   margin: 0px 32px;
   height: max-content;

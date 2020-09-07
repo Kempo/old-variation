@@ -9,7 +9,7 @@ export const PricingContainer = styled.div<FilledProp>`
   min-width: 310px;
   width: 310px;
   padding: 10px 25px;
-  margin: 0px 12px 24px 0px;
+  margin: 0px 0px 24px 0px;
   border-style: solid;
   border-width: 1px;
   border-color: ${MAIN_BLUE};
