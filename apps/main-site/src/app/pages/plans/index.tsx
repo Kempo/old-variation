@@ -83,6 +83,14 @@ const ActionFooter = styled.div`
     line-height: 24px;
     width: 350px;
   }
+
+
+  @media screen and (max-width: 420px) {
+    p {
+      width: 100%;
+    }
+    padding: 12px 12px;
+  }
 `;
 
 const Action = styled.div`
