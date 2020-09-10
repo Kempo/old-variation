@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { PricingContainer, PricingHeader, PricingFeatureList, PriceNumber, ActionButton } from '../../components';
 import { EssentialPlan, ProfessionalPlan } from './featureList';
+import { DARK_GREY, MAIN_BLUE } from '../../styles/Colors';
 
 const EMAIL = 'contact@variationstudio.com'
 
@@ -9,41 +10,86 @@ const Layout = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 3em;
-  padding-bottom: 12px;
+  padding-bottom: 24px;
 `;
 
 const CallToAction = styled.div`
   margin-bottom: 24px;
 
-  h1, h2 {
+  h2 {
     font-weight: 500;
   }
 
   h1 {
     margin: 0px;
     font-size: 48px;
+    font-weight: 600;
+  }
+
+  p {
+    color: ${DARK_GREY};
   }
 `;
 
 const Pricing = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
+  margin-top: 48px;
+  margin-bottom: 48px;
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Disclaimer = styled.small`
   color: #CCC;
-  padding-bottom: 32px;
+  padding-bottom: 128px;
 `;
 
 const Spacing = styled.div`
-  width: 50px;
-  height: 100%;
-  display: inline;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 48px;
 
-  @media screen and (max-width: 600px) {
-    display: none;
+  font-weight: 700;
+  color: ${DARK_GREY};
+`;
+
+const VerticalLine = styled.div`
+  display: inline;
+  background-color: ${DARK_GREY};
+  height: 35px;
+  width: 1px;
+  margin: 25px 0px;
+`;
+
+const ActionFooter = styled.div`
+  background-color: ${MAIN_BLUE};
+  padding: 12px 24px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+
+  p {
+    line-height: 24px;
+    width: 350px;
+  }
+`;
+
+const Action = styled.div`
+  width: auto;
+
+  @media screen and (max-width: 700px) {
+    width: 100%;
   }
 `;
 
@@ -60,12 +106,11 @@ const emit = (category, label) => {
 
 const InterestButton = () =>
   (<a href={TYPEFORM} onClick={() => emit('FORM_CLICK', 'IM_INTERESTED_FORM')} target="_blank" rel="noopener noreferrer">
-    <ActionButton outlined hoverEffect={false} style={{ width: '100%' }}>I'm interested</ActionButton>
+    <ActionButton outlined hoverEffect={false} style={{ width: '100%' }}>I'm interested!</ActionButton>
   </a>);
 
 const Plans: React.FC = () => {
   return (
-    <>
       <Layout>
         <CallToAction>
           <h1>Connect your practice online.</h1>
@@ -100,7 +145,11 @@ const Plans: React.FC = () => {
             </PricingFeatureList>
             <InterestButton />
           </PricingContainer>
-          <Spacing />
+          <Spacing>
+            <VerticalLine />
+            OR
+            <VerticalLine />
+          </Spacing>
           <PricingContainer filled={true}>
             <PricingHeader>
               <h1>PROFESSIONAL</h1>
@@ -120,9 +169,17 @@ const Plans: React.FC = () => {
             <InterestButton />
           </PricingContainer>
         </Pricing>
+        <Disclaimer>* Business email is set at five accounts. Inquire for more.</Disclaimer>
+        {/* <h2>See more of our features <a href="/features">here</a>.</h2> */}
+        <ActionFooter>
+          <p>"Variation does it right. Affordable and professional. My website makes my practice insanely easy to reach and to contact me. I love it." - <strong>John</strong></p>
+          <Action>
+            <a href={TYPEFORM} onClick={() => emit('FORM_CLICK', 'IM_INTERESTED_FORM')} target="_blank" rel="noopener noreferrer">
+              <ActionButton outlined hoverEffect={false} style={{ width: '100%', padding: '20px 48px' }}>I'm interested! &rarr;</ActionButton>
+            </a>
+          </Action>
+        </ActionFooter>
       </Layout>
-      <Disclaimer>* Business email is set at five accounts. Inquire for more.</Disclaimer>
-    </>
   )
 }
 

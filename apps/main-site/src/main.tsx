@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
+import { MAIN_BLUE } from '../src/app/styles/Colors';
 
 import App from './app/app';
 
@@ -15,6 +16,14 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0px;
   }
+
+   a {
+     color: ${MAIN_BLUE};
+
+     &:hover {
+       color: ${MAIN_BLUE};
+     }
+   }
 `;
 
 ReactDOM.render(
