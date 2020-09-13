@@ -19,6 +19,7 @@ const GlobalStyle = createGlobalStyle`
 
    a {
      color: ${MAIN_BLUE};
+     text-decoration: none;
 
      &:hover {
        color: ${MAIN_BLUE};

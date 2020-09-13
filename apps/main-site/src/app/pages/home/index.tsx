@@ -11,30 +11,24 @@ const BottomTextStyles = css`
 `;
 
 const Description = styled.p`
-  font-weight: 400;
-  ${BottomTextStyles}
-`;
-
-const Audience = styled.p`
   font-weight: 300;
   ${BottomTextStyles}
 `;
 
 const Header = styled.h1`
   font-size: 64px;
-  font-weight: 500;
+  font-weight: 600;
+  max-width: 600px;
 `;
 
-const DescriptionText = "A specialty software development studio that crafts beautiful and intuitive applications to amplify your digital presence."
-const AudienceText = "We partner with medical professionals to seamlessly connect the online world directly to their business."
+const DescriptionText = "We partner with medical professionals to build beautiful and intuitive websites to amplify their digital presence."
 
 const Home: React.FC = () => {
   return (
     <div>
-      <Header>Variation Studio</Header>
+      <Header>Connect your medical practice to the online world.</Header>
       <Description>{DescriptionText}</Description>
-      <Audience>{AudienceText}</Audience>
-      <a href={`mailto:${EMAIL}`} target="_blank" rel="noopener noreferrer"><ActionButton outlined={false} hoverEffect>Contact</ActionButton></a>
+      <a href={`mailto:${EMAIL}`} target="_blank" rel="noopener noreferrer"><ActionButton outlined={false}>Contact</ActionButton></a>
     </div>
   )
 }

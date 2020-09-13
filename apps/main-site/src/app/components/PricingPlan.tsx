@@ -8,7 +8,7 @@ type FilledProp = {
 export const PricingContainer = styled.div<FilledProp>`
   min-width: 310px;
   width: 310px;
-  padding: 10px 25px;
+  padding: 15px 35px;
   border-style: solid;
   border-width: 1px;
   border-color: ${MAIN_BLUE};
@@ -17,6 +17,7 @@ export const PricingContainer = styled.div<FilledProp>`
   color: black;
   display: flex;
   flex-direction: column;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 
   h1 {
     margin: 0px;
@@ -25,7 +26,7 @@ export const PricingContainer = styled.div<FilledProp>`
 
   p {
     font-size: 18px;
-    margin: 0px 0px 5px 0px;
+    margin: 0px 0px 15px 0px;
   }
 
   ${(props: FilledProp) => props.filled && css`
@@ -52,14 +53,14 @@ export const PricingHeader = styled.div`
   border-bottom-style: solid;
   border-bottom-width: 1px;
 
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 
   h1 {
     font-size: 18px;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 300;
-    margin: 0px 0px 5px 0px;
+    margin: 15px 0px 25px 0px;
   }
 `;
 
@@ -81,6 +82,6 @@ export const PricingFeatureList = styled.div`
 `;
 
 export const PriceNumber = styled.span`
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 400;
 `;

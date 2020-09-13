@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { PricingContainer, PricingHeader, PricingFeatureList, PriceNumber, ActionButton } from '../../components';
-import { EssentialPlan, ProfessionalPlan } from './featureList';
+import { EssentialPlan, ProfessionalPlan, FAQ } from './static/';
 import { DARK_GREY, MAIN_BLUE } from '../../styles/Colors';
+import { Heading } from '../../styles/Headers';
 
 const EMAIL = 'contact@variationstudio.com'
 
@@ -15,16 +16,6 @@ const Layout = styled.div`
 
 const CallToAction = styled.div`
   margin-bottom: 24px;
-
-  h2 {
-    font-weight: 500;
-  }
-
-  h1 {
-    margin: 0px;
-    font-size: 48px;
-    font-weight: 600;
-  }
 
   p {
     color: ${DARK_GREY};
@@ -46,7 +37,7 @@ const Pricing = styled.div`
 
 const Disclaimer = styled.small`
   color: #CCC;
-  padding-bottom: 128px;
+  padding-bottom: 64px;
 `;
 
 const Spacing = styled.div`
@@ -81,15 +72,16 @@ const ActionFooter = styled.div`
 
   p {
     line-height: 24px;
-    width: 350px;
+    margin: 0px;
+    width: 400px;
   }
 
 
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 500px) {
     p {
       width: 100%;
     }
-    padding: 12px 12px;
+    padding: 12px;
   }
 `;
 
@@ -97,7 +89,28 @@ const Action = styled.div`
   width: auto;
 
   @media screen and (max-width: 700px) {
+    margin-top: 16px;
     width: 100%;
+  }
+`;
+
+const Questions = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 64px;
+
+  h2 {
+    text-align: center;
+    font-size: 36px;
+  }
+`;
+
+const QuestionAnswer = styled.div`
+  text-align: left;
+
+  h4 {
+    font-size: 22px;
+    font-weight: 500;
   }
 `;
 
@@ -114,20 +127,20 @@ const emit = (category, label) => {
 
 const InterestButton = () =>
   (<a href={TYPEFORM} onClick={() => emit('FORM_CLICK', 'IM_INTERESTED_FORM')} target="_blank" rel="noopener noreferrer">
-    <ActionButton outlined hoverEffect={false} style={{ width: '100%' }}>I'm interested!</ActionButton>
+    <ActionButton outlined style={{ width: '100%' }}>I'm interested!</ActionButton>
   </a>);
 
 const Plans: React.FC = () => {
   return (
       <Layout>
         <CallToAction>
-          <h1>Connect your practice online.</h1>
-          <h2>Setup for free, pay later.</h2>
-          <p>
-            <br />
-            We offer free setup and if you're unsatisfied with any of our plans, you can cancel anytime, no cost.
-            <br />
-            <br />
+          <Heading>
+            <h1>Setup for free and connect online.</h1>
+            <h2>Make your business official.</h2>
+          </Heading>
+          <p style={{ lineHeight: '22px' }}>
+            No credit card required. Cancel at no cost.
+            <br/>
             Have any questions? Send us a message at:
             <br />
             <a href={`mailto:${EMAIL}`} target="_blank" rel="noopener noreferrer">contact@variationstudio.com</a>
@@ -178,12 +191,23 @@ const Plans: React.FC = () => {
           </PricingContainer>
         </Pricing>
         <Disclaimer>* Business email is set at five accounts. Inquire for more.</Disclaimer>
-        {/* <h2>See more of our features <a href="/features">here</a>.</h2> */}
+        <Questions>
+          <h2>Frequently Asked Questions</h2>
+          {
+            FAQ.map(faq => (
+              <QuestionAnswer key={faq.H}>
+                <h4>{faq.H}</h4>
+                <p>{faq.P}</p>
+              </QuestionAnswer>
+            ))
+          }
+        </Questions>
+        <h2>See more of our features <a href="/features">here</a>.</h2>
         <ActionFooter>
-          <p>"Variation does it right. Affordable and professional. My website makes my practice insanely easy to reach and to contact me. I love it." - <strong>John</strong></p>
+          <p>"Variation is affordable and professional. My website makes my practice incredibly easy to reach and to contact me. I love it." <br /><strong>John</strong></p>
           <Action>
             <a href={TYPEFORM} onClick={() => emit('FORM_CLICK', 'IM_INTERESTED_FORM')} target="_blank" rel="noopener noreferrer">
-              <ActionButton outlined hoverEffect={false} style={{ width: '100%', padding: '20px 48px' }}>I'm interested! &rarr;</ActionButton>
+              <ActionButton outlined style={{ width: '100%', padding: '20px 48px' }}>Get Started! &rarr;</ActionButton>
             </a>
           </Action>
         </ActionFooter>

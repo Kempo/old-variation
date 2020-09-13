@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Plans } from './pages';
+import { Home, Plans, Features } from './pages';
 import { Switch, Route, Link, useLocation } from 'react-router-dom';
 import triangle from './pages/home/Triangle.svg';
 
@@ -10,7 +10,7 @@ type ContainerProps = {
 }
 
 const Layout = styled.div`
-  max-width: 1050px;
+  max-width: 1100px;
   width: 100%;
   margin: 0px 32px;
   height: max-content;
@@ -42,7 +42,7 @@ const Container = styled.div<ContainerProps>`
 const Navigation = styled.div`
   display: flex;
   flex-direction: row;
-  width: 125px;
+  width: 200px;
   justify-content: space-between;
   margin-top: 25px;
 `;
@@ -67,8 +67,12 @@ export const App = () => {
         <Navigation>
           <WrapperLink to="/">Home</WrapperLink>
           <WrapperLink to="/plans">Pricing</WrapperLink>
+          <WrapperLink to="/features">Features</WrapperLink>
         </Navigation>
         <Switch>
+          <Route path="/features">
+            <Features />
+          </Route>
           <Route path="/plans">
             <Plans />
           </Route>
