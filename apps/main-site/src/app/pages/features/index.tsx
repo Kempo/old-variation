@@ -42,7 +42,7 @@ const Description = styled.div`
   width: 500px;
 
   @media screen and (max-width: 600px) {
-    width: 300px;
+    width: 100%;
   }
 
   h3 {
@@ -68,7 +68,7 @@ const ExtraFeature = styled.div`
   margin: 10px 0px;
   padding: 25px 35px;
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 600px) {
     flex-direction: column;
     justify-content: center;
     padding: 25px;
@@ -80,17 +80,21 @@ const ExtraFeatureDescription = styled.div`
     text-align: left;
     font-size: 22px;
     font-weight: 400;
-    margin: 5px 0px 5px 0px;
+    margin: 5px 0px 10px 0px;
   }
   p {
-    font-size: 18px;
+    font-size: 16px;
     color: ${DARK_GREY};
     margin: 0px 0px 5px 0px;
   }
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 600px) {
     h4, p {
       text-align: center;
+    }
+
+    h4 {
+      margin: 5px 0px 15px 0px;
     }
   }
 `;
@@ -126,7 +130,7 @@ const ExtraCheckmark = styled(YellowCheckmark)`
   height: 55px;
   margin-right: 35px;
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 600px) {
     margin-bottom: 15px;
     margin-right: 0px;
   }

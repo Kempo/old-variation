@@ -34,7 +34,7 @@ export const PricingContainer = styled.div<FilledProp>`
 
   @media screen and (max-width: 420px) {
     margin: 0px 0px 24px 0px;
-    padding: 10px 12px;
+    padding: 15px 25px;
   }
 
 `;
