@@ -89,7 +89,7 @@ const ExtraFeatureDescription = styled.div`
   }
 
   @media screen and (max-width: 700px) {
-    h4 {
+    h4, p {
       text-align: center;
     }
   }

@@ -6,8 +6,7 @@ type FilledProp = {
 }
 
 export const PricingContainer = styled.div<FilledProp>`
-  min-width: 310px;
-  width: 310px;
+  max-width: 310px;
   padding: 15px 35px;
   border-style: solid;
   border-width: 1px;
@@ -22,11 +21,6 @@ export const PricingContainer = styled.div<FilledProp>`
   h1 {
     margin: 0px;
     color: ${MAIN_BLUE};
-  }
-
-  p {
-    font-size: 18px;
-    margin: 0px 0px 15px 0px;
   }
 
   ${(props: FilledProp) => props.filled && css`
@@ -73,7 +67,7 @@ export const PricingFeatureList = styled.div`
   h2 {
     font-weight: 400;
     font-size: 18px;
-    margin: 0px 0px 5px 0px;
+    margin: 0px 0px 10px 0px;
   }
   p {
     font-size: 14px;
