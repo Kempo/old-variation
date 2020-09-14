@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { PricingContainer, PricingHeader, PricingFeatureList, PriceNumber, ActionButton, ActionFooter } from '../../components';
 import { EssentialPlan, ProfessionalPlan, FAQ } from './static/';
@@ -167,7 +168,7 @@ const Plans: React.FC = () => {
             ))
           }
         </Questions>
-        <h2>See more of our features <a href="/features">here</a>.</h2>
+        <h2>See more of our features <Link to="/features">here</Link>.</h2>
         <ActionFooter
           title="Jumpstart your online presence now."
           subtitle={null}

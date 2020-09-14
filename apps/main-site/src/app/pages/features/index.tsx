@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Heading } from '../../styles/Headers';
 import { DARK_GREY, MAIN_BLUE, LIGHT_YELLOW } from '../../styles/Colors';
@@ -162,7 +163,7 @@ const Features: React.FC = () => {
           </ExtraFeatureDescription>
         </ExtraFeature>
       </div>
-      <h2>Check out our plans <a href="/plans">here</a>.</h2>
+      <h2>Check out our plans <Link to="/features">here</Link>.</h2>
       <ActionFooter
         title="Setup your website, for free."
         subtitle={null}
