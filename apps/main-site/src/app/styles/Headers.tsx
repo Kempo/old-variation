@@ -11,4 +11,14 @@ export const Heading = styled.div`
     font-weight: 500;
     font-size: 32px;
   }
+
+  @media screen and (max-width: 700px) {
+    h1 {
+      font-size: 32px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+  }
 `;

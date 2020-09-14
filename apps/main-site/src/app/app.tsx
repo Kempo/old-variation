@@ -20,22 +20,14 @@ const Container = styled.div<ContainerProps>`
   display: flex;
   justify-content: center;
 
-  // TO FIX.
-  @media screen and (max-width: 600px) {
-    background-image: none;
-    padding-bottom: 50px;
-  }
-
   ${(props: ContainerProps) => props.showBackground && css`
     background: white;
     color: black;
 
-    @media screen and (min-width: 601px) {
-      background-image: url(${triangle});
-      background-size: cover;
-      background-repeat: no-repeat;
-      min-height: 100vh;
-    }
+    background-image: url(${triangle});
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
   `}
 `;
 

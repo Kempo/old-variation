@@ -1,35 +1,33 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { ActionButton } from '../../components';
+import { Heading } from '../../styles/Headers';
 
 const EMAIL = "contact@variationstudio.com"
 
-const BottomTextStyles = css`
-  max-width: 500px;
-  width: 100%;
-  font-size: 22px;
+const Layout = styled.div`
+  margin-top: 100px;
 `;
 
-const Description = styled.p`
-  font-weight: 300;
-  ${BottomTextStyles}
-`;
+const TitleHeading = styled(Heading)`
+  max-width: 700px;
 
-const Header = styled.h1`
-  font-size: 64px;
-  font-weight: 600;
-  max-width: 600px;
+  h2 {
+    font-weight: 300;
+    font-size: 24px;
+    max-width: 400px;
+  }
 `;
-
-const DescriptionText = "We partner with medical professionals to build beautiful and intuitive websites to amplify their digital presence."
 
 const Home: React.FC = () => {
   return (
-    <div>
-      <Header>Connect your medical practice to the online world.</Header>
-      <Description>{DescriptionText}</Description>
+    <Layout>
+      <TitleHeading>
+        <h1>Connect your medical practice to the online world.</h1>
+        <h2>Setup your website for free. <br /> Build your online presence with us.</h2>
+      </TitleHeading>
       <a href={`mailto:${EMAIL}`} target="_blank" rel="noopener noreferrer"><ActionButton outlined={false}>Contact</ActionButton></a>
-    </div>
+    </Layout>
   )
 }
 
