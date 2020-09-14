@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { PricingContainer, PricingHeader, PricingFeatureList, PriceNumber, ActionButton } from '../../components';
+import { PricingContainer, PricingHeader, PricingFeatureList, PriceNumber, ActionButton, ActionFooter } from '../../components';
 import { EssentialPlan, ProfessionalPlan, FAQ } from './static/';
-import { DARK_GREY, MAIN_BLUE } from '../../styles/Colors';
+import { DARK_GREY } from '../../styles/Colors';
 import { Heading } from '../../styles/Headers';
 
 const EMAIL = 'contact@variationstudio.com'
@@ -57,41 +57,6 @@ const VerticalLine = styled.div`
   height: 35px;
   width: 1px;
   margin: 25px 0px;
-`;
-
-const ActionFooter = styled.div`
-  background-color: ${MAIN_BLUE};
-  padding: 12px 24px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  color: white;
-
-  p {
-    line-height: 24px;
-    margin: 0px;
-    width: 400px;
-  }
-
-
-  @media screen and (max-width: 500px) {
-    p {
-      width: 100%;
-    }
-    padding: 12px;
-  }
-`;
-
-const Action = styled.div`
-  width: auto;
-
-  @media screen and (max-width: 700px) {
-    margin-top: 16px;
-    width: 100%;
-  }
 `;
 
 const Questions = styled.div`
@@ -203,6 +168,13 @@ const Plans: React.FC = () => {
           }
         </Questions>
         <h2>See more of our features <a href="/features">here</a>.</h2>
+        <ActionFooter
+          title="Jumpstart your online presence now."
+          subtitle={null}
+          link={TYPEFORM}
+          buttonText="Get Started! &rarr;"
+        />
+        {/*
         <ActionFooter>
           <p>"Variation is affordable and professional. My website makes my practice incredibly easy to reach and to contact me. I love it." <br /><strong>John</strong></p>
           <Action>
@@ -211,6 +183,7 @@ const Plans: React.FC = () => {
             </a>
           </Action>
         </ActionFooter>
+        */}
       </Layout>
   )
 }

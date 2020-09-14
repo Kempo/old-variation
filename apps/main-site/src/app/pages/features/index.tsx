@@ -4,7 +4,7 @@ import { Heading } from '../../styles/Headers';
 import { DARK_GREY, MAIN_BLUE, LIGHT_YELLOW } from '../../styles/Colors';
 import { ReactComponent as GreenCheckmark } from './assets/GreenCheckmark.svg';
 import { ReactComponent as YellowCheckmark } from './assets/YellowCheckmark.svg';
-import { ActionButton } from '../../components';
+import { ActionFooter } from '../../components';
 import { List, Feature } from './FeatureList';
 
 const TYPEFORM = 'https://variation-studio.typeform.com/to/Ygy5hQxP';
@@ -99,32 +99,6 @@ const ExtraFeatureDescription = styled.div`
   }
 `;
 
-const ActionFooter = styled.div`
-  background-color: ${MAIN_BLUE};
-  padding: 12px 24px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  color: white;
-
-  p {
-    line-height: 24px;
-    margin: 0px;
-    width: 400px;
-  }
-
-
-  @media screen and (max-width: 500px) {
-    p {
-      width: 100%;
-    }
-    padding: 12px;
-  }
-`;
-
 const ExtraCheckmark = styled(YellowCheckmark)`
   width: 55px;
   height: 55px;
@@ -133,15 +107,6 @@ const ExtraCheckmark = styled(YellowCheckmark)`
   @media screen and (max-width: 600px) {
     margin-bottom: 15px;
     margin-right: 0px;
-  }
-`;
-
-const Action = styled.div`
-  width: auto;
-
-  @media screen and (max-width: 700px) {
-    width: 100%;
-    margin-top: 16px;
   }
 `;
 
@@ -198,6 +163,13 @@ const Features: React.FC = () => {
         </ExtraFeature>
       </div>
       <h2>Check out our plans <a href="/plans">here</a>.</h2>
+      <ActionFooter
+        title="Setup your website, for free."
+        subtitle={null}
+        buttonText="Get Started! &rarr;"
+        link={TYPEFORM}
+      />
+      {/*
       <ActionFooter>
           <span>
             <h1>Setup your website for free.</h1>
@@ -209,6 +181,7 @@ const Features: React.FC = () => {
             </a>
           </Action>
         </ActionFooter>
+      */}
     </Layout>
   )
 }
