@@ -1,5 +1,7 @@
 # Variation Studio
 
+Built for a venture into helping medical professionals with their online presence.
+
 TODO:
 - [ ] Refactor styles out to a library
 - [ ] Integrate Postgres DB
